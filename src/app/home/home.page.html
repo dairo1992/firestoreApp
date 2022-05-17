@@ -1,5 +1,8 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
     <ion-title>
       Blank
     </ion-title>
@@ -7,5 +10,11 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
- 
+  <ion-card *ngFor="let song of songList | async" routerLink="/detail/{{song.id}}">
+    <ion-card-header>{{song.songName}}</ion-card-header>
+    <ion-card-content>
+      Artista: {{song.artistName}}
+      id: {{song.id}}
+    </ion-card-content>
+  </ion-card>
 </ion-content>
