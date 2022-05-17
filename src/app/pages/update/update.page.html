@@ -1,11 +1,11 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>create</ion-title>
+    <ion-title>update</ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-  <form [formGroup]="createSongForm" (submit)= "createSong()">
+  <form [formGroup]="updateSongForm" (submit)= "updateSong()">
     <ion-item>
       <ion-label stacked>Cancion:</ion-label>
       <ion-input formControlName="songName" type="text" placeholder="Nombre de la Cancion"></ion-input>
@@ -22,7 +22,7 @@
       <ion-label stacked>Descripcion:</ion-label>
       <ion-input formControlName="songDescription" type="text" placeholder="Descripcion"></ion-input>
     </ion-item>
-    <ion-button expand="block" type="submit">Agregar</ion-button>
+    <ion-button expand="block" color="success" type="submit">Actualizar</ion-button>
     <ion-button expand="block" routerLink="/home">Listado</ion-button>
   </form>
 </ion-content>

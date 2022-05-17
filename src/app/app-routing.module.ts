@@ -19,6 +19,15 @@ const routes: Routes = [
     path: 'detail/:id',
     loadChildren: () => import('./pages/detail/detail.module').then( m => m.DetailPageModule)
   },
+  {
+    path: 'update',
+    loadChildren: () => import('./pages/update/update.module').then( m => m.UpdatePageModule)
+  },  {
+    path: 'cantantes',
+    loadChildren: () => import('./pages/cantantes/cantantes.module').then( m => m.CantantesPageModule)
+  },
+
+
 ];
 
 @NgModule({

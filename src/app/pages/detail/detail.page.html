@@ -15,19 +15,10 @@
       <p>Album: {{song.albumName}}</p>
       <p>Descripcion: {{song.songDescription}}</p>
     </ion-card-content>
-    <ion-button expand="block"  (click)="deleteSong()"> Eliminar Cancion </ion-button>
+    <section style="text-align:center">
+      <ion-button shape="round" fill="outline" size="small" (click)="deleteSong()"> Eliminar </ion-button>
+      <ion-button shape="round" fill="outline" size="small" color="warning" (click)="updateSong(song)"> Modificar
+      </ion-button>
+    </section>
   </ion-card>
 </ion-content>
-<!-- <ion-content>
-  <h3>Artista</h3>
-  <p> La canción {{ song.songName }} fue escrita por el autor {{song.artistName}}</p>
-
-  <h3>Album</h3>
-  <p>Esta canción pertenece al album {{song.songName }} </p>
-
-  <h3>Descripción</h3>
-  <p>{{ song.songName }}   </p>
-
-  <ion-button expand="block"  (click)="deleteSong()"> Eliminar Cancion </ion-button>
-
-  </ion-content> -->

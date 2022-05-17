@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, NavigationExtras, Router } from '@angular/router';
 import { AlertController } from '@ionic/angular';
 import { FirestoreService } from 'src/app/services/data/firestore.service';
 
@@ -67,6 +67,15 @@ export class DetailPage implements OnInit {
         },],
     });
     await alert.present();
+  }
+
+  updateSong(song) {
+    const extras: NavigationExtras = {
+      queryParams: {
+        data: JSON.stringify(song)
+      }
+    };
+    this.router.navigate(['update/'], extras);
   }
 
 }

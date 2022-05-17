@@ -26,4 +26,8 @@ export class FirestoreService {
   deleteSong(songId: string): Promise<void> {
     return this.firestore.doc(`songList/${songId}`).delete();
   }
+
+  updateSong(id: string, albumName: string, artistName: string, songDescription: string, songName: string): Promise<void>{
+    return this.firestore.doc(`songList/${id}`).update({id, albumName, artistName, songDescription, songName});
+  }
 }

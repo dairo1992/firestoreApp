@@ -24,13 +24,13 @@ export class CreatePage implements OnInit {
       artistName: ['', Validators.required],
       songDescription: ['', Validators.required],
       songName: ['', Validators.required],
-    })
-   }
+    });
+  }
 
   ngOnInit() {
   }
 
-  async createSong(){
+  async createSong() {
     const loading = await this.loading.create();
     const albumName = this.createSongForm.value.albumName;
     const artistName = this.createSongForm.value.artistName;
@@ -38,11 +38,11 @@ export class CreatePage implements OnInit {
     const songName = this.createSongForm.value.songName;
 
     this.fireService.createSong(albumName, artistName, songDescription, songName).then(
-      () => {loading.dismiss().then(() => {this.router.navigateByUrl('home');});},
+      () => { loading.dismiss().then(() => { this.router.navigateByUrl('home'); }); },
       error => {
         console.error(error);
       }
-    )
+    );
     return await loading.present();
   }
 }

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>cantantes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let cantante of cantantes">
+    <ion-card-header>{{cantantes.name}}</ion-card-header>
+    <ion-card-content>
+      Email: {{cantantes.email}}
+      Telefono: {{cantantes.phone}}
+    </ion-card-content>
+  </ion-card>
+</ion-content>
