@@ -13,6 +13,7 @@ export class ListPage implements OnInit {
 
   ngOnInit() {
     this.songList = this.fireService.getSongList().valueChanges();
+    console.log(this.songList);
   }
 
 }

@@ -9,7 +9,11 @@ export class JsonplaceholderService {
 
   constructor(private http: HttpClient) { }
 
-  getCantantes(): Observable<any> {
-    return this.http.get<[]>('https://jsonplaceholder.typicode.com/users');
+  getCantantes(){
+    return this.http.get('https://jsonplaceholder.typicode.com/users');
+  }
+
+  getImages(){
+    return this.http.get('https://jsonplaceholder.typicode.com/photos');
   }
 }

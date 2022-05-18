@@ -1,0 +1,18 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+    <ion-title>images</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<ion-card *ngFor="let image of images">
+  <ion-card-header>{{image.images.title}}</ion-card-header>
+  <ion-card-content>
+    <ion-img [src]="image.images.url"></ion-img>
+  </ion-card-content>
+</ion-card>
+</ion-content>

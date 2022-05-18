@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { AngularFirestore, AngularFirestoreCollection, AngularFirestoreDocument } from '@angular/fire/compat/firestore';
+import { Image } from 'src/app/interfaces/image';
 import { RecordingStudios } from 'src/app/interfaces/recording-studios';
 import { Song } from 'src/app/interfaces/song';
 
@@ -17,6 +18,10 @@ export class FirestoreService {
 
   getSongList(): AngularFirestoreCollection<Song> {
     return this.firestore.collection('songList');
+  }
+
+  getImages(){
+    return this.firestore.collection('images');
   }
 
   getSongDetails(path: string, songId: string) {
@@ -53,6 +58,13 @@ export class FirestoreService {
   updateRecording(id: string, nameRedording: string, typeOFMelody: string, numberOfCabins: string, owner: string): Promise<void>{
     return this.firestore.doc(`recordingList/${id}`).update({id, nameRedording, typeOFMelody, numberOfCabins, owner});
   }
+
+  images(images: any): Promise<void> {
+    const id = this.firestore.createId();
+    return this.firestore.doc(`images/${id}`).set({images});
+  }
+
+
 }
 
 

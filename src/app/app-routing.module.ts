@@ -46,7 +46,11 @@ const routes: Routes = [
   {
     path: 'song-list',
     loadChildren: () => import('./pages/list/list.module').then( m => m.ListPageModule)
+  },  {
+    path: 'images',
+    loadChildren: () => import('./pages/images/images.module').then( m => m.ImagesPageModule)
   },
+
 
 
 ];
