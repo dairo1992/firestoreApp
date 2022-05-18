@@ -10,6 +10,6 @@ export class JsonplaceholderService {
   constructor(private http: HttpClient) { }
 
   getCantantes(): Observable<any> {
-    return this.http.get('https://jsonplaceholder.typicode.com/users');
+    return this.http.get<[]>('https://jsonplaceholder.typicode.com/users');
   }
 }

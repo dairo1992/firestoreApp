@@ -1,0 +1,28 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>update</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="updateRecordingForm" (submit)="updateRecording()">
+    <ion-item>
+      <ion-label stacked>Nombre:</ion-label>
+      <ion-input formControlName="nameRedording" type="text" placeholder="Nombre de la Grabación"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Melodia:</ion-label>
+      <ion-input formControlName="typeOFMelody" type="text" placeholder="Tipo de melodia"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Cabina:</ion-label>
+      <ion-input formControlName="numberOfCabins" type="number" min="0" placeholder="Numero de cabina"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label stacked>Propietario:</ion-label>
+      <ion-input formControlName="owner" type="text" placeholder="Propietario"></ion-input>
+    </ion-item>
+    <ion-button expand="block" color="success" type="submit">Actualizar</ion-button>
+    <ion-button expand="block" routerLink="/home">Listado</ion-button>
+  </form>
+</ion-content>

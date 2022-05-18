@@ -8,23 +8,44 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'create',
+    redirectTo: 'home',
     pathMatch: 'full'
   },
   {
-    path: 'create',
+    path: 'create-song',
     loadChildren: () => import('./pages/create/create.module').then( m => m.CreatePageModule)
   },
   {
-    path: 'detail/:id',
+    path: 'song-detail/:id',
     loadChildren: () => import('./pages/detail/detail.module').then( m => m.DetailPageModule)
   },
   {
-    path: 'update',
+    path: 'update-song',
     loadChildren: () => import('./pages/update/update.module').then( m => m.UpdatePageModule)
-  },  {
+  },
+  {
     path: 'cantantes',
     loadChildren: () => import('./pages/cantantes/cantantes.module').then( m => m.CantantesPageModule)
+  },
+  {
+    path: 'create-recording',
+    loadChildren: () => import('./pages/recording/create/create.module').then( m => m.CreatePageModule)
+  },
+  {
+    path: 'recording-detail/:id',
+    loadChildren: () => import('./pages/recording/detail/detail.module').then( m => m.DetailPageModule)
+  },
+  {
+    path: 'update-recording',
+    loadChildren: () => import('./pages/recording/update/update.module').then( m => m.UpdatePageModule)
+  },
+  {
+    path: 'recording-list',
+    loadChildren: () => import('./pages/recording/list/list.module').then( m => m.ListPageModule)
+  },
+  {
+    path: 'song-list',
+    loadChildren: () => import('./pages/list/list.module').then( m => m.ListPageModule)
   },
 
 

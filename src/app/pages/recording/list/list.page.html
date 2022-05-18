@@ -1,0 +1,17 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>lista de Grabaciones</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let recording of recordingList | async" routerLink="/recording-detail/{{recording.id}}">
+    <ion-card-header>{{recording.nameRedording}}</ion-card-header>
+    <ion-card-content>
+      <p>Tipo de Melodia: {{recording.typeOFMelody}}</p>
+      <!-- <p>Numero de cabinas: {{recording.numberOfCabins}}</p>
+      <p>Propietario: {{recording.owner}}</p> -->
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" color="success" routerLink="/create-recording">Nuevo</ion-button>
+</ion-content>

@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card *ngFor="let song of songList | async" routerLink="/song-detail/{{song.id}}">
+    <ion-card-header>{{song.songName}}</ion-card-header>
+    <ion-card-content>
+      Artista: {{song.artistName}}
+    </ion-card-content>
+  </ion-card>
+  <ion-button expand="block" color="success" routerLink="/create-song">Nueva</ion-button>
+</ion-content>

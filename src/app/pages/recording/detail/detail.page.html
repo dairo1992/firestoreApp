@@ -1,0 +1,21 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Detalle {{recording.nameRedording}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card>
+    <ion-card-header>{{recording.nameRedording}}</ion-card-header>
+    <ion-card-content>
+      <strong>Artista: {{recording.typeOFMelody}}</strong>
+      <p>Album: {{recording.numberOfCabins}}</p>
+      <p>Descripcion: {{recording.owner}}</p>
+    </ion-card-content>
+    <section style="text-align:center">
+      <ion-button shape="round" fill="outline" size="small" (click)="deleteRecording()"> Eliminar </ion-button>
+      <ion-button shape="round" fill="outline" size="small" color="warning" (click)="updateRecording(recording)"> Modificar
+      </ion-button>
+    </section>
+  </ion-card>
+</ion-content>

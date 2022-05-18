@@ -10,7 +10,7 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <section>
+  <!-- <section>
     <ion-button expand="block" size="small" color="primary" routerLink="/cantantes">Cantantes</ion-button>
   </section>
   <ion-card *ngFor="let song of songList | async" routerLink="/detail/{{song.id}}">
@@ -18,5 +18,10 @@
     <ion-card-content>
       Artista: {{song.artistName}}
     </ion-card-content>
-  </ion-card>
+  </ion-card> -->
+  <section>
+    <ion-button expand="block" routerLink="/song-list">Song List</ion-button>
+    <ion-button expand="block" routerLink="/cantantes">Cantantes</ion-button>
+    <ion-button expand="block" routerLink="/recording-list">Recording List</ion-button>
+  </section>
 </ion-content>

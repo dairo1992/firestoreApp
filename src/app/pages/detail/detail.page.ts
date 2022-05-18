@@ -75,7 +75,7 @@ export class DetailPage implements OnInit {
         data: JSON.stringify(song)
       }
     };
-    this.router.navigate(['update/'], extras);
+    this.router.navigate(['update-song/'], extras);
   }
 
 }

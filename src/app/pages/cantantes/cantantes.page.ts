@@ -15,7 +15,6 @@ export class CantantesPage implements OnInit {
   ngOnInit() {
     this.JS.getCantantes().subscribe(result => {
       this.cantantes = result;
-      console.log(result[0]);
     });
   }
 
