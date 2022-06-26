@@ -1,19 +1,19 @@
 import { ComponentFixture, TestBed, waitForAsync } from '@angular/core/testing';
 import { IonicModule } from '@ionic/angular';
 
-import { AuthRegisterComponent } from './auth-register.component';
+import { RecoveryPage } from './recovery.page';
 
-describe('AuthRegisterComponent', () => {
-  let component: AuthRegisterComponent;
-  let fixture: ComponentFixture<AuthRegisterComponent>;
+describe('RecoveryPage', () => {
+  let component: RecoveryPage;
+  let fixture: ComponentFixture<RecoveryPage>;
 
   beforeEach(waitForAsync(() => {
     TestBed.configureTestingModule({
-      declarations: [ AuthRegisterComponent ],
+      declarations: [ RecoveryPage ],
       imports: [IonicModule.forRoot()]
     }).compileComponents();
 
-    fixture = TestBed.createComponent(AuthRegisterComponent);
+    fixture = TestBed.createComponent(RecoveryPage);
     component = fixture.componentInstance;
     fixture.detectChanges();
   }));

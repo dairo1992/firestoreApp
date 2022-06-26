@@ -1,0 +1,40 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inicio Session</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <div class="container">
+    <ion-card>
+      <ion-card-header>
+        <ion-card-subtitle>Digite Usuario y Contraseña</ion-card-subtitle>
+        <ion-card-title>Iniciar Session</ion-card-title>
+      </ion-card-header>
+      <ion-card-content>
+        <form [formGroup]="loginForm" (ngSubmit)="login($event)">
+          <ion-item>
+            <ion-input formControlName="email" type="text" placeholder="Usuario"></ion-input>
+          </ion-item>
+          <ion-chip color="danger" *ngIf="emailField.errors && emailField.dirty">
+            <ion-label *ngIf="emailField.hasError('email')">El Usuario es invalido</ion-label>
+            <ion-label *ngIf="emailField.hasError('required')">El Usuario es requerido</ion-label>
+          </ion-chip>
+          <ion-item>
+            <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+          </ion-item>
+          <ion-chip color="danger" *ngIf="passField.errors && passField.dirty">
+            <ion-label *ngIf="passField.hasError('minLength')">Se requiere minimo 6 caracteres</ion-label>
+            <ion-label *ngIf="passField.hasError('required')">La contraseña es requerida</ion-label>
+          </ion-chip>
+          <div>
+            <ion-button expand="block" color="success" type="submit">Login</ion-button>
+            <p><a routerLink="/register">Registrarse</a></p>
+            <p><a routerLink="/recovery">Olvide mi contraseña</a></p>
+          </div>
+        </form>
+      </ion-card-content>
+    </ion-card>
+
+  </div>
+</ion-content>

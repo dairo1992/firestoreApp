@@ -8,7 +8,7 @@ const routes: Routes = [
   },
   {
     path: '',
-    redirectTo: 'home',
+    redirectTo: 'auth',
     pathMatch: 'full'
   },
   {
@@ -46,10 +46,24 @@ const routes: Routes = [
   {
     path: 'song-list',
     loadChildren: () => import('./pages/list/list.module').then( m => m.ListPageModule)
-  },  {
+  },
+  {
     path: 'images',
     loadChildren: () => import('./pages/images/images.module').then( m => m.ImagesPageModule)
   },
+  {
+    path: 'auth',
+    loadChildren: () => import('./pages/auth/auth.module').then( m => m.AuthPageModule)
+  },
+  {
+    path: 'register',
+    loadChildren: () => import('./pages/register/register.module').then( m => m.RegisterPageModule)
+  },
+  {
+    path: 'recovery',
+    loadChildren: () => import('./pages/recovery/recovery.module').then( m => m.RecoveryPageModule)
+  },
+
 
 
 

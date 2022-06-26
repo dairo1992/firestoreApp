@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>register</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="registerForm" (ngSubmit)="register($event)">
+    <ion-item>
+      <ion-input formControlName="email" type="email" placeholder="Usuario"></ion-input>
+    </ion-item>
+    <ion-chip color="danger" *ngIf="emailField.errors && emailField.dirty">
+      <ion-label *ngIf="emailField.hasError('email')">El Usuario es invalido</ion-label>
+      <ion-label *ngIf="emailField.hasError('required')">El Usuario es requerido</ion-label>
+    </ion-chip>
+    <ion-item>
+      <ion-input formControlName="password" type="password" placeholder="Contraseña"></ion-input>
+    </ion-item>
+    <ion-chip color="danger" *ngIf="passField.errors && passField.dirty">
+      <ion-label *ngIf="passField.hasError('minlength')">Se requiere minimo 6 caracteres</ion-label>
+      <ion-label *ngIf="passField.hasError('required')">La contraseña es requerida</ion-label>
+    </ion-chip>
+    <div>
+      <ion-button expand="block" color="success" type="submit">Registrarse</ion-button>
+      <p><a routerLink="/auth">Login</a></p>
+      
+    </div>
+  </form>
+</ion-content>

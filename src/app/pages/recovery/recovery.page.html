@@ -1,0 +1,23 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>recovery</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="recoveryForm" (ngSubmit)="recovery($event)">
+    <ion-item>
+      <ion-input formControlName="email" type="text" placeholder="Usuario"></ion-input>
+    </ion-item>
+    <ion-chip color="danger" *ngIf="emailField.errors && emailField.dirty">
+      <ion-label *ngIf="emailField.hasError('email')">El Usuario es invalido</ion-label>
+      <ion-label *ngIf="emailField.hasError('required')">El Usuario es requerido</ion-label>
+    </ion-chip>
+    <div>
+      <ion-button expand="block" color="success" type="submit">Recuperar</ion-button>
+      <p><a routerLink="/auth">Login</a></p>
+      <p><a routerLink="/register">Registrarse</a></p>
+      
+    </div>
+  </form>
+</ion-content>
