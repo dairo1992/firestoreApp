@@ -1,0 +1,19 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>concierto-list</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-list>
+  <ion-list-header>
+    <ion-label>Lista de conciertos</ion-label>
+  </ion-list-header>
+  <ion-item tappable *ngFor="let concierto of listaConciertos" routerLink="/concierto-detail/{{concierto.id}}">
+    <ion-label>
+      <h2>{{concierto.name}}</h2>
+      <p>Ticket: <strong>{{concierto.valor_entrada}}</strong></p>
+    </ion-label>
+  </ion-item>
+</ion-list>
+</ion-content>

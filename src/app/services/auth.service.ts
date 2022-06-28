@@ -1,26 +1,41 @@
 import { Injectable } from '@angular/core';
-import firebase from "firebase/compat/app";
+// import firebase from "firebase/compat/app";
+import { AngularFireAuth} from '@angular/fire/compat/auth';
 
 @Injectable({
   providedIn: 'root'
 })
 export class AuthService {
 
-  constructor() { }
+  constructor(public auth: AngularFireAuth) { }
 
-  loginUser(email: string, password: string): Promise<firebase.auth.UserCredential> {
-    return firebase.auth().signInWithEmailAndPassword(email, password);
+  loginUser(email: string, password: string){
+    // return firebase.auth().signInWithEmailAndPassword(email, password);
+    return this.auth.signInWithEmailAndPassword(email, password);
   }
 
-  signUp(email: string, password: string): Promise<any> {
-    return firebase.auth().createUserWithEmailAndPassword(email, password);
+  signUp(email: string, password: string){
+    // return firebase.auth().createUserWithEmailAndPassword(email, password);
+    return this.auth.createUserWithEmailAndPassword(email, password);
   }
 
-  resetPassword(email: string): Promise<void>{
-    return firebase.auth().sendPasswordResetEmail(email);
+  resetPassword(email: string){
+    // return firebase.auth().sendPasswordResetEmail(email);
+    return this.auth.sendPasswordResetEmail(email);
   }
 
-  logout():Promise<void>{
-    return firebase.auth().signOut();
+  logout(){
+    // return firebase.auth().signOut();
+    return this.auth.signOut();
+  }
+
+  getUser(){
+    // return firebase.auth().currentUser;
+    return this.auth.currentUser;
+  }
+
+  hasUser(){
+    // return firebase.auth().
+    return this.auth.authState;
   }
 }

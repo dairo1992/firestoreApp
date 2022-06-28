@@ -1,0 +1,26 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>concierto-create</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-item>
+  <ion-label position="stacked">Nombre de concierto</ion-label>
+  <ion-input [(ngModel)]="nombre" type="text"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Fecha de concierto</ion-label>
+  <ion-input [(ngModel)]="fecha" type="date" displayFormat="DD-MM-YYYY" pickerFormat="DD-MM-YYYY" [min]="minDate"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Valor de Entrada de concierto</ion-label>
+  <ion-input [(ngModel)]="valor_entrada" type="number"></ion-input>
+</ion-item>
+<ion-item>
+  <ion-label position="stacked">Valor de concierto</ion-label>
+  <ion-input [(ngModel)]="valor_concierto" type="number"></ion-input>
+</ion-item>
+<ion-button (click)="createConcierto(nombre,fecha,valor_entrada,valor_concierto)">Crear Concierto</ion-button>
+
+</ion-content>

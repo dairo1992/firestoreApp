@@ -2,7 +2,7 @@
   <ion-toolbar>
     <ion-buttons slot="start">
       <ion-back-button></ion-back-button>
-      <!-- <ion-button slot="star">Salir</ion-button> -->
+
     </ion-buttons>
     <ion-title>
       Inicio
@@ -25,6 +25,9 @@
     <ion-button expand="block" routerLink="/cantantes">Cantantes</ion-button>
     <ion-button expand="block" routerLink="/recording-list">Recording List</ion-button>
     <ion-button expand="block" routerLink="/images">Imagenes</ion-button>
-    <!-- <ion-button expand="block" routerLink="/auth">Login</ion-button> -->
+    <ion-button expand="block" routerLink="/concierto-create" color="success">Nuevo Concierto</ion-button>
+    <ion-button expand="block" routerLink="/concierto-list" color="success">Conciertos</ion-button>
+    <!-- <ion-button slot="star" routerLink="/auth" *ngIf="statusUser == 1">Login</ion-button>
+    <ion-button slot="star" (click)="salir()" *ngIf="statusUser == 0">Salir</ion-button> -->
   </section>
 </ion-content>

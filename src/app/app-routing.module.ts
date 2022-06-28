@@ -63,6 +63,19 @@ const routes: Routes = [
     path: 'recovery',
     loadChildren: () => import('./pages/recovery/recovery.module').then( m => m.RecoveryPageModule)
   },
+  {
+    path: 'concierto-create',
+    loadChildren: () => import('./pages/conciertos/concierto-create/concierto-create.module').then( m => m.ConciertoCreatePageModule)
+  },
+  {
+    path: 'concierto-detail/:id',
+    loadChildren: () => import('./pages/conciertos/concierto-detail/concierto-detail.module').then( m => m.ConciertoDetailPageModule)
+  },
+  {
+    path: 'concierto-list',
+    loadChildren: () => import('./pages/conciertos/concierto-list/concierto-list.module').then( m => m.ConciertoListPageModule)
+  },
+
 
 
 

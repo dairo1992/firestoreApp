@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>{{concierto?.name}}</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<ion-card>
+  <ion-card-header>
+    Ingresos al Concierto
+    <span>{{concierto.revenue | currency}}</span>
+  </ion-card-header>
+  <ion-card-content>
+    <h2>Nombre: {{concierto.name}}</h2>
+    <p>Ticket: <strong>{{concierto.valor_entrada}}</strong></p>
+  </ion-card-content>
+</ion-card>
+
+<ion-card class=".agregar_invitado_formulario">
+  <ion-card-header>
+    <h3> Agregar invitado</h3> 
+  </ion-card-header>
+  <ion-card-content>
+    <ion-item>
+        <ion-label position="stacked"> Nombre: </ion-label>
+        <ion-input [(ngModel)]="nombre_invitado" type="text" aria-placeholder="Cual es el nombre del invitado?"> </ion-input>
+      </ion-item>
+      <ion-button color="primary" (click)="agregar_invitado(nombre_invitado)">Agregar invitado </ion-button>
+    </ion-card-content>
+</ion-card>
+<ion-card>
+<ion-card-content>
+  <p> Ticket: <strong> {{ concierto?.price }}</strong></p>
+  <p> Fecha: <strong> {{ concierto?.date }}</strong></p>
+</ion-card-content>
+</ion-card>
+</ion-content>
